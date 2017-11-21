@@ -11,7 +11,7 @@ using namespace std;
 const float cameraSize = 3.0f;
 const float cameraLineWidth = 3.0f;
 
-void DrawCurrentCamera(vector<cv::Mat> showPoses);
+void DrawCurrentPoses(vector<cv::Mat> showPoses);
 
 int main() {
 
@@ -108,15 +108,14 @@ int main() {
 
         d_cam.Activate(s_cam);
         glClearColor(1.0f,1.0f,1.0f,1.0f);
-        DrawCurrentCamera(showPoses);
+        DrawCurrentPoses(showPoses);
 
         pangolin::FinishFrame();
         cv::waitKey(200);
     }
-
 }
 
-void DrawCurrentCamera(vector<cv::Mat> showPoses)
+void DrawCurrentPoses(vector<cv::Mat> showPoses)
 {
     const float &w = cameraSize;
     const float h = w*0.75f;
@@ -156,6 +155,4 @@ void DrawCurrentCamera(vector<cv::Mat> showPoses)
 
         glPopMatrix();
     }
-
-
 }
